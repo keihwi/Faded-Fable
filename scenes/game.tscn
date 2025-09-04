@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciu7xwjlcefcf"]
+
+[ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
+
+[sub_resource type="TileSet" id="TileSet_uwrxv"]
+
+[sub_resource type="TileSet" id="TileSet_yqjtg"]
+tile_size = Vector2i(32, 32)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="MC" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(45, 55)
+
+[node name="Camera2D" type="Camera2D" parent="MC"]
+position = Vector2(0, -11)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="Setting" type="Node" parent="."]
+
+[node name="Background" type="TileMapLayer" parent="Setting"]
+tile_set = SubResource("TileSet_uwrxv")
+
+[node name="Untouchable" type="TileMapLayer" parent="Setting"]
+tile_set = SubResource("TileSet_uwrxv")
+
+[node name="Touchable" type="TileMapLayer" parent="Setting"]
+tile_set = SubResource("TileSet_yqjtg")
+
+[node name="TEMP_WORLD_BOUND" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TEMP_WORLD_BOUND"]
+position = Vector2(44, 92)
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
