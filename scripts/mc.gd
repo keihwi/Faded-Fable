@@ -42,3 +42,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+
+
+func _on_dead_zone_body_entered(body: Node2D) -> void:
+	queue_free()

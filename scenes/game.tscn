@@ -5,7 +5,6 @@
 [sub_resource type="TileSet" id="TileSet_uwrxv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uwrxv"]
-load_path = "res://.godot/imported/platform_plum1.png-8b4ebf9d67d760f10e2ea19c17739b9d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = SubResource("CompressedTexture2D_uwrxv")
