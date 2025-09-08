@@ -1,28 +1,53 @@
-[gd_scene load_steps=7 format=4 uid="uid://ciu7xwjlcefcf"]
+[gd_scene load_steps=8 format=3 uid="uid://ciu7xwjlcefcf"]
 
 [ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ba3inaultc1a5" path="res://scenes/platform.tscn" id="2_yqjtg"]
 
 [sub_resource type="TileSet" id="TileSet_uwrxv"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uwrxv"]
+[sub_resource type="Animation" id="Animation_yqjtg"]
+resource_name = "move"
+length = 1.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, -33), Vector2(-122, -33)]
+}
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
-texture = SubResource("CompressedTexture2D_uwrxv")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -3.18631, 16, -3.18631, 16, 7.00988, -16, 7.32851)
+[sub_resource type="Animation" id="Animation_lnu2h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, -33)]
+}
 
-[sub_resource type="TileSet" id="TileSet_yqjtg"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lnu2h")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbhrr"]
+_data = {
+&"RESET": SubResource("Animation_lnu2h"),
+&"move": SubResource("Animation_yqjtg")
+}
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_uwrxv")]
-z_index = 5
 position = Vector2(45, 55)
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
@@ -39,8 +64,32 @@ tile_set = SubResource("TileSet_uwrxv")
 tile_set = SubResource("TileSet_uwrxv")
 
 [node name="Touchable" type="TileMapLayer" parent="Setting"]
-tile_map_data = PackedByteArray("AAADAAEAAAAAAAAAAAAGAAAAAAAAAAAAAAABAP7/AAAAAAAAAAD9/wAAAAAAAAAAAAAKAP3/AAAAAAAAAAD6//7/AAAAAAAAAAA=")
-tile_set = SubResource("TileSet_yqjtg")
+tile_set = SubResource("TileSet_uwrxv")
+
+[node name="StaticPlatforms" type="Node" parent="."]
+
+[node name="Platform2" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(0, -33)
+
+[node name="Platform6" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(-13, 47)
+
+[node name="Platform" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(76, 5)
+
+[node name="Platform3" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(-154, -33)
+
+[node name="MovingPlatforms" type="Node" parent="."]
+
+[node name="Platform3" parent="MovingPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(-32, -33)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/Platform3"]
+libraries = {
+&"": SubResource("AnimationLibrary_lbhrr")
+}
+autoplay = "move"
 
 [node name="TEMP_WORLD_BOUND" type="StaticBody2D" parent="."]
 

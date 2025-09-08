@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -330.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -44,5 +44,5 @@ func _physics_process(delta: float) -> void:
 	
 
 
-func _on_dead_zone_body_entered(body: Node2D) -> void:
-	queue_free()
+#func _on_dead_zone_body_entered(body: Node2D) -> void:
+	#queue_free()
