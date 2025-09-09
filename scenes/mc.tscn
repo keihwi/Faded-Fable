@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyq6h855fibj7"]
+[gd_scene load_steps=20 format=3 uid="uid://cyq6h855fibj7"]
 
 [ext_resource type="Script" uid="uid://5d35dq06nlt8" path="res://scripts/mc.gd" id="1_i6vl1"]
 [ext_resource type="Texture2D" uid="uid://bqex4sh0ubhby" path="res://assets/sprites/MC_idle_sheet.png" id="1_yc5nw"]
 [ext_resource type="Texture2D" uid="uid://bdnw0mcfq6o46" path="res://assets/sprites/MC_walk_sheet.png" id="3_a6s5m"]
 [ext_resource type="Texture2D" uid="uid://cq2pcxm77fecf" path="res://assets/sprites/MC_temp_jump.png" id="3_vlp1l"]
+[ext_resource type="PackedScene" uid="uid://cm8udt0w4rk5r" path="res://scenes/interactions/interactable_component.tscn" id="5_xbm6p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6vl1"]
 atlas = ExtResource("1_yc5nw")
@@ -124,3 +125,6 @@ frame_progress = 0.308012
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_ccss8")
+
+[node name="interactableComponent" parent="." instance=ExtResource("5_xbm6p")]
+position = Vector2(-1, -15)

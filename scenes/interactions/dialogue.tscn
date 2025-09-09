@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt7towdaqtdg6"]
+
+[ext_resource type="Script" uid="uid://wvkqm5b3u7s8" path="res://scripts/interactions/testScript.gd" id="1_j6eob"]
+[ext_resource type="Texture2D" uid="uid://dqvxr0o5vcp7u" path="res://icon.svg" id="2_onqjl"]
+[ext_resource type="PackedScene" uid="uid://bgs6ndw32g3r8" path="res://scenes/interactions/interactable.tscn" id="3_p8mop"]
+[ext_resource type="PackedScene" uid="uid://cnyi3tk5c2h8q" path="res://scenes/interactions/textBox.tscn" id="4_ogrde"]
+[ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="5_njd8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vogiq"]
+size = Vector2(31, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1cjp"]
+radius = 32.9848
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fyky8"]
+
+[node name="Dialogue" type="Node2D"]
+
+[node name="NPC" type="StaticBody2D" parent="."]
+position = Vector2(168, 20)
+script = ExtResource("1_j6eob")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+position = Vector2(468, 398)
+scale = Vector2(0.234375, 0.234375)
+texture = ExtResource("2_onqjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+position = Vector2(467.5, 397.5)
+shape = SubResource("RectangleShape2D_vogiq")
+
+[node name="Interactable" parent="NPC" instance=ExtResource("3_p8mop")]
+interact_name = "[E] to talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Interactable"]
+position = Vector2(467, 401)
+shape = SubResource("CircleShape2D_x1cjp")
+
+[node name="TextBox" parent="NPC" instance=ExtResource("4_ogrde")]
+offset_left = 451.0
+offset_top = 316.0
+offset_right = 483.0
+offset_bottom = 355.0
+
+[node name="MC" parent="." instance=ExtResource("5_njd8l")]
+position = Vector2(791, 387)
+
+[node name="TEMP_WORLD_BOUND" type="StaticBody2D" parent="."]
+position = Vector2(648, 348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TEMP_WORLD_BOUND"]
+position = Vector2(44, 92)
+shape = SubResource("WorldBoundaryShape2D_fyky8")
