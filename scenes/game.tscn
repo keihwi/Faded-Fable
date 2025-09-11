@@ -108,6 +108,7 @@ tile_set = SubResource("TileSet_uwrxv")
 tile_set = SubResource("TileSet_uwrxv")
 
 [node name="TextureRect" type="TextureRect" parent="Setting"]
+z_index = -1
 offset_left = -243.0
 offset_top = -82.0
 offset_right = 335.0
@@ -164,4 +165,4 @@ position = Vector2(44, 92)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Dialogue" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(-472, -117)
+position = Vector2(127, 52)

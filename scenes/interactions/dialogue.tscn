@@ -27,8 +27,8 @@ position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_x1cjp")
 
 [node name="TextBox" parent="NPC" instance=ExtResource("4_ogrde")]
-offset_left = -17.0
-offset_top = -96.0
-offset_right = 15.0
-offset_bottom = -57.0
+offset_left = 48.0
+offset_top = -76.0
+offset_right = 80.0
+offset_bottom = -28.0
 metadata/_edit_use_anchors_ = true
