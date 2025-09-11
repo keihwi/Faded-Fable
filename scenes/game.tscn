@@ -1,9 +1,50 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciu7xwjlcefcf"]
+[gd_scene load_steps=14 format=3 uid="uid://ciu7xwjlcefcf"]
 
 [ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://ba3inaultc1a5" path="res://scenes/platform.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://c5gu6rb5tm0xe" path="res://assets/sprites/TEMP_swamp_bg.png" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ba3inaultc1a5" path="res://scenes/plumplatform.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dcl2r386fllhk" path="res://scenes/appleplatform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bt7towdaqtdg6" path="res://scenes/interactions/dialogue.tscn" id="5_iywne"]
 
 [sub_resource type="TileSet" id="TileSet_uwrxv"]
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-243, -67), Vector2(-358, -67)]
+}
+
+[sub_resource type="Animation" id="Animation_iywne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-243, -67)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
+_data = {
+&"RESET": SubResource("Animation_iywne"),
+&"move": SubResource("Animation_lbhrr")
+}
 
 [sub_resource type="Animation" id="Animation_lnu2h"]
 length = 0.001
@@ -60,32 +101,57 @@ position_smoothing_enabled = true
 [node name="Background" type="TileMapLayer" parent="Setting"]
 tile_set = SubResource("TileSet_uwrxv")
 
-[node name="Untouchable" type="TileMapLayer" parent="Setting"]
+[node name="Midground" type="TileMapLayer" parent="Setting"]
 tile_set = SubResource("TileSet_uwrxv")
 
-[node name="Touchable" type="TileMapLayer" parent="Setting"]
+[node name="Foreground" type="TileMapLayer" parent="Setting"]
 tile_set = SubResource("TileSet_uwrxv")
+
+[node name="TextureRect" type="TextureRect" parent="Setting"]
+offset_left = -243.0
+offset_top = -82.0
+offset_right = 335.0
+offset_bottom = 243.0
+texture = ExtResource("2_lbhrr")
 
 [node name="StaticPlatforms" type="Node" parent="."]
 
-[node name="Platform2" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+[node name="PlumPlatform1" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
 position = Vector2(0, -33)
 
-[node name="Platform6" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+[node name="PlumPlatform2" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
 position = Vector2(-13, 47)
 
-[node name="Platform" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
-position = Vector2(76, 5)
-
-[node name="Platform3" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+[node name="PlumPlatform4" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
 position = Vector2(-154, -33)
+
+[node name="ApplePlatform" parent="StaticPlatforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(-473, -97)
+
+[node name="PlumPlatform6" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(-213, -67)
+
+[node name="PlumPlatform7" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
+position = Vector2(-388, -67)
+
+[node name="ApplePlatform2" parent="StaticPlatforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(74, 5)
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
-[node name="Platform3" parent="MovingPlatforms" instance=ExtResource("2_yqjtg")]
+[node name="ApplePlatform2" parent="MovingPlatforms" instance=ExtResource("3_lnu2h")]
+position = Vector2(-243, -67)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/ApplePlatform2"]
+libraries = {
+&"": SubResource("AnimationLibrary_p57ef")
+}
+autoplay = "move"
+
+[node name="PlumPlatform5" parent="MovingPlatforms" instance=ExtResource("2_yqjtg")]
 position = Vector2(-32, -33)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/Platform3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/PlumPlatform5"]
 libraries = {
 &"": SubResource("AnimationLibrary_lbhrr")
 }
@@ -96,3 +162,6 @@ autoplay = "move"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TEMP_WORLD_BOUND"]
 position = Vector2(44, 92)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
+[node name="Dialogue" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(-473, -179)
