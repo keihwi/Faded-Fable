@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwkulq4bcguxq"]
+
+[ext_resource type="Script" uid="uid://kns7q6heq7ti" path="res://scripts/title.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://bc4o2e0ftbme6" path="res://assets/title_screen/play_button.png" id="2_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://cjskq08u6o24o" path="res://assets/title_screen/quit_button.png" id="3_4rr2b"]
+[ext_resource type="Texture2D" uid="uid://bonysur24oq6" path="res://assets/title_screen/play_pressed.png" id="3_ia1n6"]
+[ext_resource type="Texture2D" uid="uid://b0smd1pvekigm" path="res://assets/title_screen/play_hover.png" id="4_hiwto"]
+[ext_resource type="Texture2D" uid="uid://bbmleekpdnauo" path="res://assets/title_screen/quit_pressed.png" id="4_yql1r"]
+[ext_resource type="Texture2D" uid="uid://c1hhaua0qvti1" path="res://assets/title_screen/quit_hover.png" id="5_4rr2b"]
+[ext_resource type="Texture2D" uid="uid://prvy0bref65x" path="res://assets/title_screen/wip_title.png" id="5_ia1n6"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_4ignj")
+
+[node name="Play" type="TextureButton" parent="."]
+offset_left = 153.0
+offset_top = 403.0
+offset_right = 415.0
+offset_bottom = 551.0
+texture_normal = ExtResource("2_b3w7a")
+texture_pressed = ExtResource("3_ia1n6")
+texture_hover = ExtResource("4_hiwto")
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_left = 733.0
+offset_top = 400.0
+offset_right = 991.0
+offset_bottom = 553.0
+texture_normal = ExtResource("3_4rr2b")
+texture_pressed = ExtResource("4_yql1r")
+texture_hover = ExtResource("5_4rr2b")
+
+[node name="WipTitle" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+texture = ExtResource("5_ia1n6")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

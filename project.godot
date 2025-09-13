@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Faded Fable"
-run/main_scene="uid://ciu7xwjlcefcf"
+run/main_scene="uid://dwkulq4bcguxq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
