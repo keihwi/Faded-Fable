@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ciu7xwjlcefcf"]
+[gd_scene load_steps=35 format=4 uid="uid://ciu7xwjlcefcf"]
 
 [ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://d26rldd80x5uh" path="res://assets/sprites/wip_bg_darkesttile.png" id="2_kvuet"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dvliuoqoxp4kx" path="res://assets/sprites/wip_bg_midgradient.png" id="6_rysoc"]
 [ext_resource type="Texture2D" uid="uid://clraldpssjd5j" path="res://assets/sprites/Swamp_bottom_grass_block_gradiant.png" id="7_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://15gaoy4loxup" path="res://assets/sprites/Swamp_middle_grass_block_4.0.png" id="8_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://4g551vjsbh68" path="res://scenes/bananaPlatform.tscn" id="14_ca42v"]
 [ext_resource type="PackedScene" uid="uid://d4b1btuvwrdup" path="res://scenes/shrek.tscn" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://nostrqmlpx6j" path="res://scenes/letter_z.tscn" id="15_ir15t"]
 
@@ -170,6 +171,9 @@ _data = {
 &"move": SubResource("Animation_yqjtg")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
+size = Vector2(480, 20)
+
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_uwrxv")]
@@ -224,6 +228,9 @@ position = Vector2(-388, -67)
 [node name="ApplePlatform2" parent="StaticPlatforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(74, 5)
 
+[node name="BananaPlatform" parent="StaticPlatforms" instance=ExtResource("14_ca42v")]
+position = Vector2(-704, -104)
+
 [node name="MovingPlatforms" type="Node" parent="."]
 
 [node name="ApplePlatform2" parent="MovingPlatforms" instance=ExtResource("3_lnu2h")]
@@ -257,3 +264,11 @@ position = Vector2(-545, -130)
 
 [node name="LetterZ3" parent="Letters" instance=ExtResource("15_ir15t")]
 position = Vector2(242, 75)
+
+[node name="Death" type="Node" parent="."]
+
+[node name="DeadZone" type="Area2D" parent="Death"]
+
+[node name="Die" type="CollisionShape2D" parent="Death/DeadZone"]
+position = Vector2(-897, 322)
+shape = SubResource("RectangleShape2D_ca42v")

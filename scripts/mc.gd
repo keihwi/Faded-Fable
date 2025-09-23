@@ -44,5 +44,8 @@ func _physics_process(delta: float) -> void:
 	
 
 
-#func _on_dead_zone_body_entered(body: Node2D) -> void:
-	#queue_free()
+
+func _on_dead_zone_body_entered(body: Node2D) -> void:
+	pass
+	#if body == self:
+		#get_tree().reload_current_scene()
