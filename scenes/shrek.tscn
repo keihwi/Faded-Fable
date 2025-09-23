@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4b1btuvwrdup"]
+[gd_scene load_steps=13 format=3 uid="uid://d4b1btuvwrdup"]
 
 [ext_resource type="Texture2D" uid="uid://bxwblxxbbf3xx" path="res://assets/sprites/shrekfruitwitch_IdleSheet2.png" id="1_ay3hf"]
+[ext_resource type="Script" uid="uid://dk88asgc8c3og" path="res://scripts/shrek.gd" id="1_ex0w3"]
+[ext_resource type="PackedScene" uid="uid://bgs6ndw32g3r8" path="res://scenes/interactions/interactable.tscn" id="3_l8ui2"]
+[ext_resource type="PackedScene" uid="uid://cnyi3tk5c2h8q" path="res://scenes/interactions/textBox.tscn" id="4_52m2g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlc8r"]
 atlas = ExtResource("1_ay3hf")
@@ -48,7 +51,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ay3hf"]
 size = Vector2(6, 0)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwc8e"]
+radius = 32.9848
+
 [node name="Shrek" type="CharacterBody2D"]
+script = ExtResource("1_ex0w3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
@@ -60,3 +67,17 @@ frame_progress = 0.0883329
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_ay3hf")
+
+[node name="Interactable" parent="." instance=ExtResource("3_l8ui2")]
+interact_name = "[E] to talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-1, -17)
+shape = SubResource("CircleShape2D_lwc8e")
+
+[node name="TextBox" parent="." instance=ExtResource("4_52m2g")]
+offset_left = -58.0
+offset_top = -87.0
+offset_right = -26.0
+offset_bottom = -39.0
+metadata/_edit_use_anchors_ = true

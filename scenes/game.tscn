@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ciu7xwjlcefcf"]
+[gd_scene load_steps=36 format=4 uid="uid://ciu7xwjlcefcf"]
 
 [ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://d26rldd80x5uh" path="res://assets/sprites/wip_bg_darkesttile.png" id="2_kvuet"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://4g551vjsbh68" path="res://scenes/bananaPlatform.tscn" id="14_ca42v"]
 [ext_resource type="PackedScene" uid="uid://d4b1btuvwrdup" path="res://scenes/shrek.tscn" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://nostrqmlpx6j" path="res://scenes/letter_z.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://dubqiup7lc84j" path="res://scenes/killzone.tscn" id="17_rysoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssvqc"]
 texture = ExtResource("2_kvuet")
@@ -171,8 +172,8 @@ _data = {
 &"move": SubResource("Animation_yqjtg")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
-size = Vector2(480, 20)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ssvqc"]
+distance = -109.0
 
 [node name="Game" type="Node2D"]
 
@@ -265,10 +266,9 @@ position = Vector2(-545, -130)
 [node name="LetterZ3" parent="Letters" instance=ExtResource("15_ir15t")]
 position = Vector2(242, 75)
 
-[node name="Death" type="Node" parent="."]
+[node name="Killzone" parent="." instance=ExtResource("17_rysoc")]
+position = Vector2(909, 83)
 
-[node name="DeadZone" type="Area2D" parent="Death"]
-
-[node name="Die" type="CollisionShape2D" parent="Death/DeadZone"]
-position = Vector2(-897, 322)
-shape = SubResource("RectangleShape2D_ca42v")
+[node name="BottomBoundary" type="CollisionShape2D" parent="Killzone"]
+z_index = 1
+shape = SubResource("WorldBoundaryShape2D_ssvqc")
