@@ -6,7 +6,8 @@ extends StaticBody2D
 # How dialogue is transmitted
 const lines: Array[String] = [
 	"Hi I'm godot.",
-	"I hope this works...", 
+	"I hope this works...",
+	"HEY IM GODOT AN I HAVE A LOT TO SAY I HOPE THIS OWRKS AND I DONT HAVE TO EXPLODE.",  
 ]
 
 func _ready() -> void:

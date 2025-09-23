@@ -3,7 +3,7 @@ extends MarginContainer
 @onready var label: Label = $MarginContainer/Label
 @onready var timer: Timer = $LetterDisplayTimer
 
-const MAX_WIDTH = 100
+const MAX_WIDTH = 256
 
 var dialog_lines: Array[String] = []
 var current_line_index: int = 0

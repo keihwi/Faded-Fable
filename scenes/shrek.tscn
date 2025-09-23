@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://d4b1btuvwrdup"]
 
 [ext_resource type="Texture2D" uid="uid://bxwblxxbbf3xx" path="res://assets/sprites/shrekfruitwitch_IdleSheet2.png" id="1_ay3hf"]
-[ext_resource type="Script" uid="uid://dk88asgc8c3og" path="res://scripts/shrek.gd" id="1_ex0w3"]
+[ext_resource type="Script" path="res://scripts/shrek.gd" id="1_ex0w3"]
 [ext_resource type="PackedScene" uid="uid://bgs6ndw32g3r8" path="res://scenes/interactions/interactable.tscn" id="3_l8ui2"]
 [ext_resource type="PackedScene" uid="uid://cnyi3tk5c2h8q" path="res://scenes/interactions/textBox.tscn" id="4_52m2g"]
 
