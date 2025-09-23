@@ -1,7 +1,8 @@
-extends CharacterBody2D
+extends StaticBody2D
 
+@onready var text_box: MarginContainer = $"../TextBox"
 @onready var interactable: Area2D = $Interactable
-@onready var text_box: MarginContainer = $TextBox
+
 
 # How dialogue is transmitted
 const lines: Array[String] = [
@@ -13,9 +14,11 @@ const lines: Array[String] = [
 ]
 
 func _ready() -> void:
+	print("Honeydew interactable is: ", interactable)  # which node is this?
+	print("Script on interactable: ", interactable.get_script())
 	interactable.interact = _on_interact
-	
 
 func _on_interact():
+	print("Honeydew interact")
 	text_box.start_dialog(lines)
 	interactable.is_interactable = false

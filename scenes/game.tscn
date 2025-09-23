@@ -189,7 +189,7 @@ position_smoothing_enabled = true
 
 [node name="Honeydew" parent="NPCs" instance=ExtResource("14_trtic")]
 z_index = 1
-position = Vector2(-606, -112)
+position = Vector2(-60, 94)
 script = null
 
 [node name="Setting" type="Node" parent="."]

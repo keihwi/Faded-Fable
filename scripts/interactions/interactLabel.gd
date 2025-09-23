@@ -8,7 +8,7 @@ var can_interact := true
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
 		if current_interactions:
-			#print("Interacting with: ", current_interactions[0])
+			print("Interacting with: ", current_interactions[0])
 			can_interact = false
 			interact_label.hide()
 			
@@ -33,9 +33,9 @@ func _sort_by_nearest(area1, area2):
 
 func _on_interact_range_area_entered(area: Area2D) -> void:
 	current_interactions.push_back(area)
-	#print("you entered.")
+	print("you entered.")
 
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	current_interactions.erase(area)
-	#print("you left.")
+	print("you left.")

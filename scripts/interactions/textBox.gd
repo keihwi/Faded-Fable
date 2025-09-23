@@ -44,10 +44,11 @@ func _show_line():
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	
 	if size.x > MAX_WIDTH:
-		label.autowrap.mode = TextServer.AUTOWRAP_WORD
-		await resized
-		await resized
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		await resized # x resize
+		await resized # y resize
 		custom_minimum_size.y = size.y
+		print("resized")
 	
 	label.text = ""
 	letter_index = 0
