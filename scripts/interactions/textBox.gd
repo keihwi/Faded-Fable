@@ -38,22 +38,34 @@ func start_dialog(lines: Array[String]):
 func _show_line():
 	visible = true 
 	text = dialog_lines[current_line_index]
+
+	# reset
+	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	label.text = text
-	
-	await resized
-	custom_minimum_size.x = min(size.x, MAX_WIDTH)
-	
-	if size.x > MAX_WIDTH:
+	await get_tree().process_frame  
+
+	# all text boxes the same size, only expand on y
+	custom_minimum_size.x = MAX_WIDTH
+
+	if label.get_minimum_size().x > MAX_WIDTH:
+		# wrap on long text
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		await resized # x resize
-		await resized # y resize
-		custom_minimum_size.y = size.y
-		print("resized")
-	
+		await get_tree().process_frame
+		custom_minimum_size.y = label.get_minimum_size().y
+	else:
+		custom_minimum_size.y = 0  
+
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  
+
+	# typewriter effect
 	label.text = ""
 	letter_index = 0
-	_display_letter()
 	can_advance_line = false
+	_display_letter()
+
+
+
+
 
 func _display_letter():
 	label.text += text[letter_index]
@@ -63,8 +75,9 @@ func _display_letter():
 		can_advance_line = true
 		return
 	
+	# set times for different char (maybe utilize later for slower sensual text haha)
 	match text[letter_index]:
-		"!", ".", ",", "?":
+		"!", ".", ",", "?", "~":
 			timer.start(punctuation_time)
 		" ":
 			timer.start(space_time)

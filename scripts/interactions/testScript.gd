@@ -11,7 +11,6 @@ const lines: Array[String] = [
 ]
 
 func _ready() -> void:
-	print("Honeydew _ready running")
 	interactable.interact = _on_interact
 	
 
