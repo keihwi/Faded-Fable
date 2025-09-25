@@ -14,11 +14,11 @@ const lines: Array[String] = [
 ]
 
 func _ready() -> void:
-	print("Honeydew interactable is: ", interactable)  # which node is this?
-	print("Script on interactable: ", interactable.get_script())
+	#print("Honeydew interactable is: ", interactable)  # which node is this?
+	#print("Script on interactable: ", interactable.get_script())
 	interactable.interact = _on_interact
 
 func _on_interact():
-	print("Honeydew interact")
+	#print("Honeydew interact")
 	text_box.start_dialog(lines)
 	interactable.is_interactable = false
