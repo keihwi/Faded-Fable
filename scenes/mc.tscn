@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyq6h855fibj7"]
+[gd_scene load_steps=21 format=3 uid="uid://cyq6h855fibj7"]
 
 [ext_resource type="Script" uid="uid://5d35dq06nlt8" path="res://scripts/mc.gd" id="1_i6vl1"]
 [ext_resource type="Texture2D" uid="uid://bqex4sh0ubhby" path="res://assets/sprites/MC_idle_sheet.png" id="1_yc5nw"]
+[ext_resource type="Texture2D" uid="uid://dy5bqpmesxl4u" path="res://assets/sprites/MC_dash.png" id="2_gcf5n"]
 [ext_resource type="Texture2D" uid="uid://bdnw0mcfq6o46" path="res://assets/sprites/MC_walk_sheet.png" id="3_a6s5m"]
 [ext_resource type="Texture2D" uid="uid://cq2pcxm77fecf" path="res://assets/sprites/MC_temp_jump.png" id="3_vlp1l"]
 [ext_resource type="PackedScene" uid="uid://cm8udt0w4rk5r" path="res://scenes/interactions/interactable_component.tscn" id="5_xbm6p"]
@@ -56,6 +57,14 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gkuii"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gcf5n")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i6vl1")
@@ -119,7 +128,7 @@ script = ExtResource("1_i6vl1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_gkuii")
-animation = &"idle"
+animation = &"dash"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

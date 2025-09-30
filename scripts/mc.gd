@@ -36,8 +36,12 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
+		elif(!can_dash):
+			animated_sprite.play("dash")
 		else:
 			animated_sprite.play("run") 
+	elif(!can_dash):
+		animated_sprite.play("dash")
 	else:
 		animated_sprite.play("jump")
 	
