@@ -218,7 +218,6 @@ position = Vector2(194, 54)
 [node name="Camera2D" type="Camera2D" parent="MC"]
 position = Vector2(0, -11)
 zoom = Vector2(2.5, 2.5)
-position_smoothing_enabled = true
 
 [node name="NPCs" type="Node" parent="."]
 
