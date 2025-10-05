@@ -313,7 +313,7 @@ distance = -109.0
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_cgiax")]
-position = Vector2(-221, -500)
+position = Vector2(-555, -139)
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
 position = Vector2(0, -11)

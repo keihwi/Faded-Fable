@@ -39,7 +39,10 @@ func _show_line():
 	visible = true 
 	text = dialog_lines[current_line_index]
 
-	# reset
+	# temporarily hide the label visually but not logically (to prevetn text flash)
+	label.modulate.a = 0.0
+
+	# reset layout
 	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	label.text = text
 	await get_tree().process_frame  
@@ -56,6 +59,9 @@ func _show_line():
 		custom_minimum_size.y = 0  
 
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER  
+
+	# now restore visibility
+	label.modulate.a = 1.0
 
 	# typewriter effect
 	label.text = ""
