@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2qw2v373cbca" path="res://scripts/interactions/textBox.gd" id="1_t77ms"]
 [ext_resource type="Texture2D" uid="uid://bfglwowcnd5d2" path="res://assets/fonts/Scroll.png" id="2_omjt5"]
-<<<<<<< Updated upstream
 [ext_resource type="FontFile" uid="uid://ig1psrka71vj" path="res://assets/fonts/PixelOperator8.ttf" id="3_omjt5"]
-=======
-[ext_resource type="FontFile" uid="uid://pq4bb720wl3p" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_omjt5"]
 [ext_resource type="Texture2D" uid="uid://dwydmj8dymhmj" path="res://assets/sprites/_arrow.png" id="4_l3hpm"]
 
 [sub_resource type="Animation" id="Animation_37nfx"]
@@ -45,10 +42,6 @@ _data = {
 &"RESET": SubResource("Animation_qhhyi"),
 &"arrow": SubResource("Animation_37nfx")
 }
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 [node name="TextBox" type="MarginContainer"]
 anchors_preset = 8
@@ -97,7 +90,7 @@ texture = ExtResource("4_l3hpm")
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="fadeArrow" type="AnimationPlayer" parent="."]
+[node name="fade_arrow" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xrjvq")
 }
