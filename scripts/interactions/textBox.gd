@@ -39,7 +39,7 @@ func _show_line():
 	visible = true 
 	text = dialog_lines[current_line_index]
 
-	# temporarily hide the label visually but not logically (to prevetn text flash)
+	# temporarily hide the label visually but not logically (to prevent text flash)
 	label.modulate.a = 0.0
 
 	# reset layout
