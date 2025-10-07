@@ -45,6 +45,9 @@ _data = {
 &"RESET": SubResource("Animation_qhhyi"),
 &"arrow": SubResource("Animation_37nfx")
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="TextBox" type="MarginContainer"]
