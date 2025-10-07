@@ -3,7 +3,22 @@
 [ext_resource type="Script" uid="uid://c2qw2v373cbca" path="res://scripts/interactions/textBox.gd" id="1_t77ms"]
 [ext_resource type="Texture2D" uid="uid://bfglwowcnd5d2" path="res://assets/fonts/Scroll.png" id="2_omjt5"]
 [ext_resource type="FontFile" uid="uid://ig1psrka71vj" path="res://assets/fonts/PixelOperator8.ttf" id="3_omjt5"]
-[ext_resource type="Texture2D" uid="uid://dwydmj8dymhmj" path="res://assets/sprites/_arrow.png" id="4_l3hpm"]
+[ext_resource type="Texture2D" uid="uid://cafyii040c3po" path="res://assets/sprites/E3.png" id="4_l3hpm"]
+
+[sub_resource type="Animation" id="Animation_qhhyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/arrow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_37nfx"]
 resource_name = "arrow"
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_qhhyi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/arrow:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xrjvq"]
