@@ -2,6 +2,9 @@ extends MarginContainer
 
 @onready var label: Label = $MarginContainer/Label
 @onready var timer: Timer = $LetterDisplayTimer
+@onready var fade_arrow: AnimationPlayer = $fadeArrow
+@onready var arrow: TextureRect = $MarginContainer/arrow
+
 
 const MAX_WIDTH = 256
 
@@ -23,6 +26,7 @@ signal dialog_finished()
 
 func _ready():
 	visible = false   # start hidden
+	arrow.hide()
 
 func start_dialog(lines: Array[String]):
 	if is_dialog_active or is_dialog_finished_permanently:
@@ -79,6 +83,8 @@ func _display_letter():
 	
 	if letter_index >= text.length():
 		can_advance_line = true
+		arrow.show()
+		fade_arrow.play("arrow")
 		return
 	
 	# set times for different char (maybe utilize later for slower sensual text haha)
@@ -93,6 +99,7 @@ func _display_letter():
 # E to advance dialog
 func _unhandled_input(event):
 	if event.is_action_pressed("interact") and is_dialog_active and can_advance_line:
+		arrow.hide()
 		current_line_index += 1
 		
 		if current_line_index >= dialog_lines.size():
