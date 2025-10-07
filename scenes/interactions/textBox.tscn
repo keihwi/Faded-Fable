@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2qw2v373cbca" path="res://scripts/interactions/textBox.gd" id="1_t77ms"]
 [ext_resource type="Texture2D" uid="uid://bfglwowcnd5d2" path="res://assets/fonts/Scroll.png" id="2_omjt5"]
-[ext_resource type="FontFile" uid="uid://pq4bb720wl3p" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_omjt5"]
+[ext_resource type="FontFile" uid="uid://ig1psrka71vj" path="res://assets/fonts/PixelOperator8.ttf" id="3_omjt5"]
 
 [node name="TextBox" type="MarginContainer"]
 anchors_preset = 8

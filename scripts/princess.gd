@@ -11,6 +11,7 @@ const lines: Array[String] = [
 	"I was just singing to the crows...",
 	"I don’t get many visitors these days.",
 	"Just a view of devastation out one window...",
+	"...and isolation in my bedroom...",
 ]
 
 func _ready() -> void:

@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dduhtnfbg81es"]
+[gd_scene load_steps=14 format=3 uid="uid://7dr7jsfqw3vs"]
 
-[ext_resource type="Texture2D" uid="uid://b73pt5jdwllgm" path="res://assets/sprites/Princess_New_New_.png" id="1_rl5q2"]
+[ext_resource type="Texture2D" uid="uid://brbwscnrpamfv" path="res://assets/sprites/Princess_recoloredlinessheet.png" id="1_rl5q2"]
 [ext_resource type="PackedScene" uid="uid://cnyi3tk5c2h8q" path="res://scenes/interactions/textBox.tscn" id="2_d8pdw"]
 [ext_resource type="Script" uid="uid://cls1ye3rboekk" path="res://scripts/princess.gd" id="3_rl5q2"]
 [ext_resource type="PackedScene" uid="uid://bgs6ndw32g3r8" path="res://scenes/interactions/interactable.tscn" id="4_3mclv"]
@@ -57,14 +57,13 @@ radius = 27.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_l8ui2"]
 
 [node name="Princess" type="CharacterBody2D"]
-script = ExtResource("3_rl5q2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bvwgi")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.709773
+frame_progress = 0.570552
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
