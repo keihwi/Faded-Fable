@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed = 130.0
 const JUMP_VELOCITY = -330.0
-const DASH_VELOCITY = 120.0
+const DASH_VELOCITY = 150.0
 const DASH_DURATION = 0.3  
 
 @onready var dash_timer: Timer = $DashTimer
