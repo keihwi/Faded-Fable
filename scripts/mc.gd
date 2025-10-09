@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		is_dashing = true
 		can_dash = false
 		dash_timer.start(DASH_DURATION)
+		speed = 530.0
 
 		# Launch in facing direction
 		if animated_sprite.flip_h:
@@ -67,6 +68,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_dash_timer_timeout() -> void:
 	is_dashing = false
+	speed = 130.0
 	can_dash_timer.start()
 
 
