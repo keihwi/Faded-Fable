@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://ciu7xwjlcefcf"]
+[gd_scene load_steps=49 format=4 uid="uid://ciu7xwjlcefcf"]
 
 [ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://d26rldd80x5uh" path="res://assets/sprites/wip_bg_darkesttile.png" id="2_kvuet"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://nostrqmlpx6j" path="res://scenes/letter_z.tscn" id="15_ir15t"]
 [ext_resource type="Texture2D" uid="uid://cfh80lnejyvd7" path="res://assets/sprites/Stalagtite.png" id="17_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://dubqiup7lc84j" path="res://scenes/killzone.tscn" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://f4a3e0akuhpe" path="res://scenes/moving_appleplatform.tscn" id="21_e1j6l"]
 [ext_resource type="FontFile" uid="uid://ig1psrka71vj" path="res://assets/fonts/PixelOperator8.ttf" id="22_37s47"]
+[ext_resource type="PackedScene" uid="uid://cayr0jchs388s" path="res://scenes/falling_bananaplatform.tscn" id="22_pl11u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssvqc"]
 texture = ExtResource("2_kvuet")
@@ -252,7 +254,7 @@ distance = -109.0
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(0, 64)
+position = Vector2(39, 62)
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
 position = Vector2(0, -11)
@@ -284,32 +286,25 @@ tile_set = SubResource("TileSet_uwrxv")
 [node name="StaticPlatforms" type="Node" parent="."]
 
 [node name="PlumPlatform1" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
-visible = false
-position = Vector2(0, -33)
+position = Vector2(-565, -12)
 
 [node name="PlumPlatform4" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
-visible = false
-position = Vector2(-154, -33)
+position = Vector2(-475, -29)
 
 [node name="ApplePlatform" parent="StaticPlatforms" instance=ExtResource("3_lnu2h")]
-visible = false
-position = Vector2(-473, -97)
+position = Vector2(-393, -40)
 
 [node name="PlumPlatform6" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
-visible = false
-position = Vector2(-213, -67)
+position = Vector2(-321, -49)
 
 [node name="PlumPlatform7" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
-visible = false
-position = Vector2(-388, -67)
+position = Vector2(-264, -61)
 
 [node name="ApplePlatform2" parent="StaticPlatforms" instance=ExtResource("3_lnu2h")]
-visible = false
-position = Vector2(74, 5)
+position = Vector2(-203, -78)
 
 [node name="BananaPlatform" parent="StaticPlatforms" instance=ExtResource("14_ca42v")]
-visible = false
-position = Vector2(-704, -104)
+position = Vector2(-2511, -33)
 
 [node name="MovingPlatforms" type="Node" parent="."]
 
@@ -332,6 +327,28 @@ libraries = {
 &"": SubResource("AnimationLibrary_lbhrr")
 }
 autoplay = "move"
+
+[node name="ApplePlatform" parent="MovingPlatforms" instance=ExtResource("21_e1j6l")]
+position = Vector2(1199, -76)
+distance = 224
+time = 3.0
+start_left = true
+
+[node name="ApplePlatform3" parent="MovingPlatforms" instance=ExtResource("21_e1j6l")]
+position = Vector2(1648, -76)
+distance = 200
+time = 3.0
+
+[node name="FallingPlatforms" type="Node" parent="."]
+
+[node name="falling_bananaplatform" parent="FallingPlatforms" instance=ExtResource("22_pl11u")]
+position = Vector2(1724, -76)
+
+[node name="falling_bananaplatform2" parent="FallingPlatforms" instance=ExtResource("22_pl11u")]
+position = Vector2(1822, -63)
+
+[node name="falling_bananaplatform3" parent="FallingPlatforms" instance=ExtResource("22_pl11u")]
+position = Vector2(1921, -53)
 
 [node name="Letters" type="Node" parent="."]
 
