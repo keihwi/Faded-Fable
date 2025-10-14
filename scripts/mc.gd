@@ -18,9 +18,15 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not is_dashing:
 		velocity += get_gravity() * delta
 
-	# Handle jump (disabled while dashing)
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_dashing:
+	# Handle jump
+	if Input.is_action_pressed("jump") and is_on_floor(): #and not is_dashing:
 		velocity.y = JUMP_VELOCITY
+	
+	#for future crouching through platforms
+	#if Input.is_action_pressed("crouch"):
+		#set_collision_mask_value(5, false)
+	#else:
+		#set_collision_mask_value(5, true)
 
 	var direction := Input.get_axis("move_left", "move_right")
 
