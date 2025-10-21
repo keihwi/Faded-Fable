@@ -289,6 +289,21 @@ _data = {
 &"move": SubResource("Animation_lbhrr")
 }
 
+[sub_resource type="Animation" id="Animation_v2yb1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2033, -75)]
+}
+
 [sub_resource type="Animation" id="Animation_wljb1"]
 resource_name = "move"
 length = 3.0
@@ -304,21 +319,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2033, -75), Vector2(2033, -75), Vector2(2360, -254), Vector2(2360, -254)]
-}
-
-[sub_resource type="Animation" id="Animation_v2yb1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2033, -75)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_js0lu"]
@@ -371,7 +371,7 @@ distance = -109.0
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(37, 62)
+position = Vector2(3613, -372)
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
 position = Vector2(0, -11)
@@ -439,6 +439,9 @@ position = Vector2(4906, -604)
 [node name="BananaPlatform2" parent="StaticPlatforms" instance=ExtResource("14_ca42v")]
 position = Vector2(3904, -618)
 
+[node name="BananaPlatform5" parent="StaticPlatforms" instance=ExtResource("14_ca42v")]
+position = Vector2(3418, -285)
+
 [node name="PlumPlatform5" parent="StaticPlatforms" instance=ExtResource("2_yqjtg")]
 position = Vector2(3989, -617)
 
@@ -502,19 +505,19 @@ position = Vector2(3200, -279)
 position = Vector2(3309, -300)
 
 [node name="falling_bananaplatform3" parent="FallingPlatforms" instance=ExtResource("22_pl11u")]
-position = Vector2(3417, -326)
+position = Vector2(3471, -333)
 
 [node name="falling_bananaplatform4" parent="FallingPlatforms" instance=ExtResource("22_pl11u")]
 position = Vector2(5103, -618)
 
 [node name="falling_grapesplatform" parent="FallingPlatforms" instance=ExtResource("23_bhx41")]
-position = Vector2(3504, -340)
+position = Vector2(3293, -370)
 
 [node name="falling_grapesplatform2" parent="FallingPlatforms" instance=ExtResource("23_bhx41")]
-position = Vector2(4665, -584)
+position = Vector2(4453, -583)
 
 [node name="falling_grapesplatform3" parent="FallingPlatforms" instance=ExtResource("23_bhx41")]
-position = Vector2(4735, -588)
+position = Vector2(4714, -588)
 
 [node name="Letters" type="Node" parent="."]
 
