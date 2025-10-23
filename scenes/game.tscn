@@ -401,7 +401,7 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="Honeydew" parent="NPCs" instance=ExtResource("14_trtic")]
 z_index = 1
-position = Vector2(2788, 14)
+position = Vector2(2788, 33)
 
 [node name="Princess" parent="NPCs" instance=ExtResource("3_37s47")]
 position = Vector2(822, 502)

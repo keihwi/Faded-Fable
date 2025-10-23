@@ -7,11 +7,12 @@ var level1_letters = 0
 
 
 # How dialogue is transmitted
-const lines1: Array[String] = [
+# Maybe have this dialogue be what she says after being talked to? or just have things repeat.
+const lines: Array[String] = [
 	"Hey!",
 ]
 
-const lines: Array[String] = [
+const lines1: Array[String] = [
 	"I’ve never seen such a mature harvest—I mean… capable traveler...",
 	"Hello wanderer~",
 	"I don’t get many visitors these days.",
@@ -31,25 +32,16 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 
 func _on_interact():
-	print("talk")
-	#print("Honeydew interact")
-	if(level1_letters < 2):
-		text_box.start_dialog(lines1)
-	else:
-		text_box.start_dialog(lines2)
-	interactable.is_interactable = false
-
-
-
-func _on_text_box_dialog_finished() -> void:
-	# Wait for the next frame before re-enabling interaction.
-	# This prevents the same "E" press that *ended* the dialogue from *starting* it again.
-	await get_tree().process_frame
+	#print("Honeydew interact") 
+	if(level1_letters < 1): 
+		text_box.start_dialog(lines1) 
+	else: 
+		text_box.start_dialog(lines2) 
+	interactable.is_interactable = false 
+		
+func _on_text_box_dialog_finished() -> void: 
+	# Check if the text box is *still* inactive, just to be safe. 
+	if (not text_box.is_dialog_active): 
+		interactable.is_interactable = true 
+		text_box.is_dialog_finished_permanently = false
 	
-	# Check if the text box is *still* inactive, just to be safe.
-	if (not text_box.is_dialog_active):
-		interactable.is_interactable = true
-	
-	#interactable.is_interactable = true
-	#interactable.set_deferred("is_interactable", true)
-	#text_box.is_dialog_finished_permanently = false

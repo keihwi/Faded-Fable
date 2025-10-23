@@ -14,13 +14,13 @@ var current_line_index: int = 0
 var text: String = ""
 var letter_index: int = 0
 
-var letter_time: float = 0.03
-var space_time: float = 0.06
-var punctuation_time: float = 0.2
+var letter_time: float = 0.01
+var space_time: float = 0.03
+var punctuation_time: float = 0.06
 
 var is_dialog_active: bool = false
 var can_advance_line: bool = false
-#var is_dialog_finished_permanently: bool = false
+var is_dialog_finished_permanently: bool = false
 
 signal dialog_finished()
 
@@ -29,14 +29,19 @@ func _ready():
 	arrow.hide()
 
 func start_dialog(lines: Array[String]):
-	if is_dialog_active: #or is_dialog_finished_permanently:
+	if is_dialog_active or is_dialog_finished_permanently: 
 		return
+	print
+	# reset flags before starting
+	is_dialog_finished_permanently = false
+	can_advance_line = false
 	
 	dialog_lines = lines
 	current_line_index = 0
-	
 	is_dialog_active = true
+	visible = true
 	_show_line()
+
 
 
 func _show_line():
@@ -105,7 +110,7 @@ func _unhandled_input(event):
 		
 		if (current_line_index >= dialog_lines.size()):
 			is_dialog_active = false
-			#is_dialog_finished_permanently = true 
+			is_dialog_finished_permanently = true 
 			emit_signal("dialog_finished")
 			visible = false
 			return
