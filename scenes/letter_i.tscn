@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://gcwj7lgldgwk"]
 
-[ext_resource type="Script" uid="uid://xi2u2qr3wmc5" path="res://scripts/letter_z.gd" id="1_cdkqh"]
+[ext_resource type="Script" uid="uid://xi2u2qr3wmc5" path="res://scripts/letter_1.gd" id="1_cdkqh"]
 [ext_resource type="Texture2D" uid="uid://c5g3x8qjtlnyh" path="res://assets/sprites/test_collectable_animation_i1.png" id="2_cdkqh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkh00"]

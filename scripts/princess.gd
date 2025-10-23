@@ -5,7 +5,16 @@ extends StaticBody2D
 
 
 # How dialogue is transmitted
-const lines: Array[String] = [
+const lines1: Array[String] = [
+	"Good evening!",
+	"It's lovely to meet you.",
+	"I was just singing to the crows...",
+	"I don’t get many visitors these days.",
+	"Just a view of devastation out one window...",
+	"...and isolation in my bedroom...",
+]
+
+const lines2: Array[String] = [
 	"Good evening!",
 	"It's lovely to meet you.",
 	"I was just singing to the crows...",
@@ -21,5 +30,5 @@ func _ready() -> void:
 
 func _on_interact():
 	#print("Honeydew interact")
-	text_box.start_dialog(lines)
+	text_box.start_dialog(lines1)
 	interactable.is_interactable = false

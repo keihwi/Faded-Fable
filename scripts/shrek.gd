@@ -3,8 +3,14 @@ extends StaticBody2D
 @onready var text_box: MarginContainer = $"../TextBox"
 @onready var interactable: Area2D = $Interactable
 
+var level1_letters = 0
+
 
 # How dialogue is transmitted
+const lines1: Array[String] = [
+	"Hey!",
+]
+
 const lines: Array[String] = [
 	"I’ve never seen such a mature harvest—I mean… capable traveler...",
 	"Hello wanderer~",
@@ -15,12 +21,26 @@ const lines: Array[String] = [
 	"Would you please help me fix the br_dg_?~",
 ]
 
+const lines2: Array[String] = [
+	"You did it!",
+]
+
 func _ready() -> void:
 	#print("Honeydew interactable is: ", interactable)  # which node is this?
 	#print("Script on interactable: ", interactable.get_script())
 	interactable.interact = _on_interact
 
 func _on_interact():
+	print("talk")
 	#print("Honeydew interact")
-	text_box.start_dialog(lines)
+	if(level1_letters < 2):
+		text_box.start_dialog(lines1)
+	else:
+		text_box.start_dialog(lines2)
 	interactable.is_interactable = false
+
+
+
+func _on_text_box_dialog_finished() -> void:
+	interactable.is_interactable = true
+	text_box.is_dialog_finished_permanently = false

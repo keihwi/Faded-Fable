@@ -11,7 +11,7 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
 		if current_interactions:
-			print("Interacting with: ", current_interactions[0])
+			#print("Interacting with: ", current_interactions[0])
 			can_interact = false
 			interact_label.hide()
 			
