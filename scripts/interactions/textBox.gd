@@ -20,7 +20,7 @@ var punctuation_time: float = 0.2
 
 var is_dialog_active: bool = false
 var can_advance_line: bool = false
-var is_dialog_finished_permanently: bool = false
+#var is_dialog_finished_permanently: bool = false
 
 signal dialog_finished()
 
@@ -29,7 +29,7 @@ func _ready():
 	arrow.hide()
 
 func start_dialog(lines: Array[String]):
-	if is_dialog_active or is_dialog_finished_permanently:
+	if is_dialog_active: #or is_dialog_finished_permanently:
 		return
 	
 	dialog_lines = lines
@@ -98,13 +98,14 @@ func _display_letter():
 
 # E to advance dialog
 func _unhandled_input(event):
-	if event.is_action_pressed("interact") and is_dialog_active and can_advance_line:
+	if (event.is_action_pressed("interact") and is_dialog_active and can_advance_line):
+		get_tree().root.set_input_as_handled()
 		arrow.hide()
 		current_line_index += 1
 		
-		if current_line_index >= dialog_lines.size():
+		if (current_line_index >= dialog_lines.size()):
 			is_dialog_active = false
-			is_dialog_finished_permanently = true 
+			#is_dialog_finished_permanently = true 
 			emit_signal("dialog_finished")
 			visible = false
 			return

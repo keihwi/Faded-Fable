@@ -42,5 +42,14 @@ func _on_interact():
 
 
 func _on_text_box_dialog_finished() -> void:
-	interactable.is_interactable = true
-	text_box.is_dialog_finished_permanently = false
+	# Wait for the next frame before re-enabling interaction.
+	# This prevents the same "E" press that *ended* the dialogue from *starting* it again.
+	await get_tree().process_frame
+	
+	# Check if the text box is *still* inactive, just to be safe.
+	if (not text_box.is_dialog_active):
+		interactable.is_interactable = true
+	
+	#interactable.is_interactable = true
+	#interactable.set_deferred("is_interactable", true)
+	#text_box.is_dialog_finished_permanently = false

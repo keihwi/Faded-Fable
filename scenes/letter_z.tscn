@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cabtofwoymca8" path="res://assets/sprites/collectable_letters_za.png" id="1_omt78"]
 [ext_resource type="Script" uid="uid://xi2u2qr3wmc5" path="res://scripts/letter_1.gd" id="1_pfrw8"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfrw8"]
 atlas = ExtResource("1_omt78")
 region = Rect2(0, 0, 17, 18)
