@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://ciu7xwjlcefcf"]
+[gd_scene load_steps=78 format=4 uid="uid://ciu7xwjlcefcf"]
 
 [ext_resource type="PackedScene" uid="uid://cyq6h855fibj7" path="res://scenes/mc.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://d26rldd80x5uh" path="res://assets/sprites/wip_bg_darkesttile.png" id="2_kvuet"]
@@ -271,44 +271,6 @@ sources/14 = SubResource("TileSetAtlasSource_rm0al")
 sources/15 = SubResource("TileSetAtlasSource_i4re6")
 sources/16 = SubResource("TileSetAtlasSource_0sl42")
 
-[sub_resource type="Animation" id="Animation_iywne"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_lbhrr"]
-resource_name = "move"
-length = 2.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 2.36667, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(3823, -299), Vector2(3823, -299), Vector2(3823, -620), Vector2(3823, -620)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
-_data = {
-&"RESET": SubResource("Animation_iywne"),
-&"move": SubResource("Animation_lbhrr")
-}
-
 [sub_resource type="Animation" id="Animation_v2yb1"]
 length = 0.001
 tracks/0/type = "value"
@@ -391,7 +353,7 @@ distance = -109.0
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(3131, 1)
+position = Vector2(35, 63)
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
 position = Vector2(0, -11)
@@ -466,14 +428,6 @@ position = Vector2(3418, -285)
 position = Vector2(3989, -617)
 
 [node name="MovingPlatforms" type="Node" parent="."]
-
-[node name="ApplePlatform2" parent="MovingPlatforms" instance=ExtResource("3_lnu2h")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatforms/ApplePlatform2"]
-libraries = {
-&"": SubResource("AnimationLibrary_p57ef")
-}
-autoplay = "move"
 
 [node name="PlumPlatform5" parent="MovingPlatforms" instance=ExtResource("2_yqjtg")]
 position = Vector2(2033, -75)
