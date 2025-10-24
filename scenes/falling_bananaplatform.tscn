@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cayr0jchs388s"]
 
-[ext_resource type="Texture2D" uid="uid://df2doas4d0m8i" path="res://assets/sprites/platform_banana_full.png" id="1_vl37m"]
+[ext_resource type="Texture2D" uid="uid://b874itwm04sp4" path="res://assets/sprites/platform_rotten_banana.png" id="1_vl37m"]
 [ext_resource type="Script" uid="uid://bfaahp4ifa2t3" path="res://scripts/falling_platform.gd" id="2_bwsdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u4ee"]
