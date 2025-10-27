@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var interactable: Area2D = $Interactable
 
 var level1_letters = 0
-
+var talkedTo
 
 # How dialogue is transmitted
 # Maybe have this dialogue be what she says after being talked to? or just have things repeat.

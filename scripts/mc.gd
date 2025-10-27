@@ -11,7 +11,13 @@ const DASH_DURATION = 0.3
 
 var can_dash = true
 var is_dashing = false
+var spawn = Vector2(35.0, 63.0)
 # Current DASH mechanic allows the player to almost float for a few seconds if you press space right before dash, keep in maybe?
+
+func _ready():
+	print(global_position)
+	#global_position = spawn
+	print(global_position)
 
 func _physics_process(delta: float) -> void:
 	# Add gravity (only if not dashing)
