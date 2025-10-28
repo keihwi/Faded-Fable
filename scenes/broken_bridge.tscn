@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ap7vfvwdlus"]
+
+[ext_resource type="Texture2D" uid="uid://cpmu2120ilx6o" path="res://assets/sprites/bridge/Bridge_Sprite.png" id="1_gqok2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prj0s"]
+size = Vector2(448, 32)
+
+[node name="BrokenBridge" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gqok2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_prj0s")
