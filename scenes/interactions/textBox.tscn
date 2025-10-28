@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2qw2v373cbca" path="res://scripts/interactions/textBox.gd" id="1_t77ms"]
 [ext_resource type="Texture2D" uid="uid://bfglwowcnd5d2" path="res://assets/fonts/Scroll.png" id="2_omjt5"]
-[ext_resource type="FontFile" uid="uid://ig1psrka71vj" path="res://assets/fonts/PixelOperator8.ttf" id="3_omjt5"]
+[ext_resource type="FontFile" uid="uid://d3pb7rbionsy8" path="res://assets/fonts/Faded_fable_cap_10-Regular.ttf" id="3_l3hpm"]
 [ext_resource type="Texture2D" uid="uid://cafyii040c3po" path="res://assets/sprites/E3.png" id="4_l3hpm"]
 
 [sub_resource type="Animation" id="Animation_qhhyi"]
@@ -76,8 +76,9 @@ theme_override_constants/margin_bottom = 8
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_omjt5")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("3_l3hpm")
+theme_override_font_sizes/font_size = 45
+text = "hey there"
 horizontal_alignment = 1
 vertical_alignment = 1
 
