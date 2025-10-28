@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func _on_interact():
 	#print("Honeydew interact") 
-	if(level1_letters < 1): 
+	if(level1_letters < 2): 
 		text_box.start_dialog(lines1) 
 	else: 
 		text_box.start_dialog(lines2) 

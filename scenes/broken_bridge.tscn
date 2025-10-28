@@ -1,15 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://0ap7vfvwdlus"]
+[gd_scene load_steps=5 format=3 uid="uid://dkpyqgphip858"]
 
 [ext_resource type="Texture2D" uid="uid://cpmu2120ilx6o" path="res://assets/sprites/bridge/Bridge_Sprite.png" id="1_gqok2"]
+[ext_resource type="Script" uid="uid://bv3a48d7w5wa1" path="res://scripts/broken_bridge.gd" id="1_prj0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prj0s"]
 size = Vector2(448, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a18va"]
+size = Vector2(446, 8)
+
 [node name="BrokenBridge" type="AnimatableBody2D"]
+script = ExtResource("1_prj0s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gqok2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StepOn" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_prj0s")
+
+[node name="Sense" type="Area2D" parent="."]
+position = Vector2(-423, 1)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sense"]
+position = Vector2(-1, -39)
+shape = SubResource("RectangleShape2D_a18va")
+
+[connection signal="area_entered" from="Sense" to="." method="_on_sense_area_entered"]
+[connection signal="body_entered" from="Sense" to="." method="_on_sense_body_entered"]
