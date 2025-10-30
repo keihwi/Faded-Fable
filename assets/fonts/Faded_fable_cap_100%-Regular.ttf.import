@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bnw2j5f6ndgmt"
-path="res://.godot/imported/Faded_fable_cap_8-Regular.ttf-2d439d69ba691e99ccedf8d328534631.fontdata"
+uid="uid://cx6k8x82u5a41"
+path="res://.godot/imported/Faded_fable_cap_100%-Regular.ttf-2581da68dde0e408a6aef1546b055860.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Faded_fable_cap_8-Regular.ttf"
-dest_files=["res://.godot/imported/Faded_fable_cap_8-Regular.ttf-2d439d69ba691e99ccedf8d328534631.fontdata"]
+source_file="res://assets/fonts/Faded_fable_cap_100%-Regular.ttf"
+dest_files=["res://.godot/imported/Faded_fable_cap_100%-Regular.ttf-2581da68dde0e408a6aef1546b055860.fontdata"]
 
 [params]
 
