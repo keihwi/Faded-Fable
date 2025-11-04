@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cyq6h855fibj7"]
+[gd_scene load_steps=28 format=3 uid="uid://cyq6h855fibj7"]
 
 [ext_resource type="Script" uid="uid://5d35dq06nlt8" path="res://scripts/mc.gd" id="1_i6vl1"]
 [ext_resource type="Texture2D" uid="uid://bqex4sh0ubhby" path="res://assets/sprites/MC_idle_sheet.png" id="1_yc5nw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdnw0mcfq6o46" path="res://assets/sprites/MC_walk_sheet.png" id="3_a6s5m"]
 [ext_resource type="Texture2D" uid="uid://cq2pcxm77fecf" path="res://assets/sprites/MC_temp_jump.png" id="3_vlp1l"]
 [ext_resource type="PackedScene" uid="uid://cm8udt0w4rk5r" path="res://scenes/interactions/interactable_component.tscn" id="5_xbm6p"]
+[ext_resource type="Script" uid="uid://vlmap2mxftaf" path="res://scripts/progress_bar.gd" id="7_gkuii"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlm4k"]
 atlas = ExtResource("2_gcf5n")
@@ -138,6 +139,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccss8"]
 size = Vector2(12, 27)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkuii"]
+bg_color = Color(0.132511, 0.435366, 0.409919, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccss8"]
+bg_color = Color(0.452079, 0.661941, 0.461908, 1)
+
+[sub_resource type="Theme" id="Theme_3ylss"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_gkuii")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ccss8")
+
 [node name="MC" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
@@ -165,5 +176,16 @@ one_shot = true
 wait_time = 1.5
 one_shot = true
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -225.0
+offset_top = -134.0
+offset_right = -147.0
+offset_bottom = -122.0
+theme = SubResource("Theme_3ylss")
+show_percentage = false
+script = ExtResource("7_gkuii")
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashTimer" to="ProgressBar" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="canDashTimer" to="." method="_on_can_dash_timer_timeout"]
+[connection signal="timeout" from="canDashTimer" to="ProgressBar" method="_on_can_dash_timer_timeout"]

@@ -28,6 +28,7 @@ position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_cgkqx")
 
 [node name="FallTimer" type="Timer" parent="."]
+wait_time = 0.85
 one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="."]

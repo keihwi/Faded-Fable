@@ -6,14 +6,16 @@ var has_fallen: bool = false
 var opacity_tween
 var pos_tween
 var start_position: Vector2
+var fall: bool = true
 
 func _ready():
 	start_position = global_position
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D and !has_fallen:
+	if body is CharacterBody2D and !has_fallen and fall:
 		fall_timer.start()
+		fall = false
 		
 		
 func _disable_collider():
@@ -41,3 +43,4 @@ func _on_respawn_timer_timeout() -> void:
 	opacity_tween.tween_property(self, "modulate:a", 1.0, 0.5)
 	$StaticBody2D/CollisionShape2D.disabled = false
 	has_fallen = false
+	fall = true

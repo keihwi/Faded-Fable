@@ -3,10 +3,11 @@ extends Area2D
 @onready var timer: Timer = $Timer
 @onready var mc: CharacterBody2D = $"../MC"
 @onready var sprite: AnimatedSprite2D = $"../MC/AnimatedSprite2D"
+@onready var hit_sound: AudioStreamPlayer = $hit_sound
 
 func _on_body_entered(body: Node2D) -> void:
 	print("You died!")
-	#hit_sound.play()
+	hit_sound.play()
 	sprite.modulate = Color(1, 0.4, 0.4)
 	
 	Engine.time_scale = 0.5
