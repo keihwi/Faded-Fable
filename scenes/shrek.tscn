@@ -70,17 +70,10 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_ay3hf")
 
 [node name="TextBox" parent="." instance=ExtResource("4_52m2g")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = -113.0
-offset_top = -96.0
+offset_top = -137.0
 offset_right = -81.0
-offset_bottom = -57.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_bottom = -98.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("1_ex0w3")
