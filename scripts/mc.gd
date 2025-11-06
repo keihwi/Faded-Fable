@@ -16,6 +16,7 @@ var spawn = Vector2(35.0, 63.0)
 
 func _ready():
 	print(global_position)
+	$ProgressBar.hide()
 	#global_position = spawn
 	print(global_position)
 
