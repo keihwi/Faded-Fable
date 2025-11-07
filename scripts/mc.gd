@@ -87,3 +87,10 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_can_dash_timer_timeout() -> void:
 	can_dash = true
+
+
+func _on_enable_dash_body_entered(body: Node2D) -> void:
+	print(body)
+	if body is CharacterBody2D:
+		$ProgressBar.show()
+		print(body)

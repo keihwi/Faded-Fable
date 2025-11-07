@@ -51,7 +51,6 @@
 [ext_resource type="PackedScene" uid="uid://cknd4fvrxb1jf" path="res://scenes/letter_e.tscn" id="44_fedci"]
 [ext_resource type="FontFile" uid="uid://cx6k8x82u5a41" path="res://assets/fonts/Faded_fable_cap_100%-Regular.ttf" id="47_8qswn"]
 [ext_resource type="PackedScene" uid="uid://dkpyqgphip858" path="res://scenes/broken_bridge.tscn" id="47_h3rex"]
-[ext_resource type="PackedScene" uid="uid://cgfvpegn13oxd" path="res://scenes/enable_dash.tscn" id="52_pf7vy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nepv3"]
 texture = ExtResource("4_wljb1")
@@ -478,10 +477,13 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm0al"]
 size = Vector2(7256, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4re6"]
+radius = 79.8311
+
 [node name="Game" type="Node2D"]
 
 [node name="MC" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(5467, -743)
+position = Vector2(54, 50)
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
 position = Vector2(0, -11)
@@ -728,5 +730,11 @@ position = Vector2(5695, -702)
 [node name="BrokenBridge" parent="." instance=ExtResource("47_h3rex")]
 position = Vector2(6400, -664)
 
-[node name="EnableDash" parent="." instance=ExtResource("52_pf7vy")]
-position = Vector2(734, -15)
+[node name="EnableDash" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnableDash"]
+position = Vector2(712, -9)
+shape = SubResource("CircleShape2D_i4re6")
+
+[connection signal="body_entered" from="EnableDash" to="MC" method="_on_enable_dash_body_entered"]
