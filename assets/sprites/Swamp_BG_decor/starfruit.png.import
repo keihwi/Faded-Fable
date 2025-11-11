@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xxq8hnsspeof"
-path="res://.godot/imported/Swamp_GrassBlock_2.png-c4372bf6a49bc29ecbe60d76f94d4cfb.ctex"
+uid="uid://cxkg44f1dhlvy"
+path="res://.godot/imported/starfruit.png-83fb0378d152e96a2316fafed34f5e08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Swamp_GrassBlock_2.png"
-dest_files=["res://.godot/imported/Swamp_GrassBlock_2.png-c4372bf6a49bc29ecbe60d76f94d4cfb.ctex"]
+source_file="res://assets/sprites/Swamp_BG_decor/starfruit.png"
+dest_files=["res://.godot/imported/starfruit.png-83fb0378d152e96a2316fafed34f5e08.ctex"]
 
 [params]
 
