@@ -16,7 +16,7 @@ var spawn = Vector2(35.0, 63.0)
 
 func _ready():
 	print(global_position)
-	$ProgressBar.hide()
+	#$ProgressBar.hide()
 	#global_position = spawn
 	print(global_position)
 
@@ -90,7 +90,5 @@ func _on_can_dash_timer_timeout() -> void:
 
 
 func _on_enable_dash_body_entered(body: Node2D) -> void:
-	print(body)
 	if body is CharacterBody2D:
 		$ProgressBar.show()
-		print(body)
