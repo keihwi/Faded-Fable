@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var interact_label: Label = $interactLabel
-
+@onready var mc: CharacterBody2D = $".."
 var current_interactions := []
 var can_interact := true
 
@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
 			#print("Interacting with: ", current_interactions[0])
 			can_interact = false
 			interact_label.hide()
-			
+			mc.can_move = false
 			await current_interactions[0].interact.call()
 			
 			can_interact = true
@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 		if current_interactions[0].is_interactable:
 			interact_label.text = current_interactions[0].interact_name
 			interact_label.show()
+			mc.can_move = true
 	else:
 		interact_label.hide()
 	
