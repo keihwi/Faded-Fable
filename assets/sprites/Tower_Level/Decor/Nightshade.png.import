@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1ceutpao617b"
-path="res://.godot/imported/Shelf w_ rotten food.png-b2935bf4df4755b3114652a5533fa4b9.ctex"
+uid="uid://mngkvd8gt6xb"
+path="res://.godot/imported/Nightshade.png-eebdb78e1894b06266b0da490c51185c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tower_Level/Decor/Shelf w_ rotten food.png"
-dest_files=["res://.godot/imported/Shelf w_ rotten food.png-b2935bf4df4755b3114652a5533fa4b9.ctex"]
+source_file="res://assets/sprites/Tower_Level/Decor/Nightshade.png"
+dest_files=["res://.godot/imported/Nightshade.png-eebdb78e1894b06266b0da490c51185c.ctex"]
 
 [params]
 

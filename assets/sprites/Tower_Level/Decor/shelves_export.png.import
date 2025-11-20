@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xdttif7oleac"
-path="res://.godot/imported/Shelf.png-4f1afc5e96a4761f01f88b2a85ac8bca.ctex"
+uid="uid://ce2sbsie3juf6"
+path="res://.godot/imported/shelves_export.png-7d17eef91b5311568c9f976c5f5d2658.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tower_Level/Decor/Shelf.png"
-dest_files=["res://.godot/imported/Shelf.png-4f1afc5e96a4761f01f88b2a85ac8bca.ctex"]
+source_file="res://assets/sprites/Tower_Level/Decor/shelves_export.png"
+dest_files=["res://.godot/imported/shelves_export.png-7d17eef91b5311568c9f976c5f5d2658.ctex"]
 
 [params]
 

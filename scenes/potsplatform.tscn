@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://25em0it8mw7t"]
+
+[ext_resource type="Texture2D" uid="uid://bur2bk446sjr8" path="res://assets/sprites/Tower_Level/Decor/Pots_and_Pans.png" id="1_2po8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctk8e"]
+size = Vector2(32, 3)
+
+[node name="PotsPlatform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2po8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_ctk8e")
+one_way_collision = true

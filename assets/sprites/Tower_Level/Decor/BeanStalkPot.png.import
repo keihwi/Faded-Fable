@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bilus48asoftm"
-path="res://.godot/imported/Shelf w_ gold.png-df1608353e93eabb1a1073c369db5d24.ctex"
+uid="uid://bwqnve2y8px5l"
+path="res://.godot/imported/BeanStalkPot.png-3af30c5415f9833f130a66dee663326e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tower_Level/Decor/Shelf w_ gold.png"
-dest_files=["res://.godot/imported/Shelf w_ gold.png-df1608353e93eabb1a1073c369db5d24.ctex"]
+source_file="res://assets/sprites/Tower_Level/Decor/BeanStalkPot.png"
+dest_files=["res://.godot/imported/BeanStalkPot.png-3af30c5415f9833f130a66dee663326e.ctex"]
 
 [params]
 

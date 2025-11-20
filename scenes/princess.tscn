@@ -88,3 +88,5 @@ shape = SubResource("CircleShape2D_ex0w3")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_l8ui2")
 disabled = true
+
+[connection signal="dialog_finished" from="TextBox" to="StaticBody2D" method="_on_text_box_dialog_finished"]
