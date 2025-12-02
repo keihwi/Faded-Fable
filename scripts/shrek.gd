@@ -9,7 +9,7 @@ var talkedTo
 # How dialogue is transmitted
 # Maybe have this dialogue be what she says after being talked to? or just have things repeat.
 const lines: Array[String] = [
-	"Hey!",
+	"You haven't gotten both letters! You must keep looking!~",
 ]
 
 const lines1: Array[String] = [
@@ -23,7 +23,7 @@ const lines1: Array[String] = [
 ]
 
 const lines2: Array[String] = [
-	"You did it!",
+	"By the good graces of the fruit overlords! You have fixed the bridge!~ Thank you! Thank you!",
 ]
 
 func _ready() -> void:
@@ -33,8 +33,10 @@ func _ready() -> void:
 
 func _on_interact():
 	#print("Honeydew interact") 
-	if(level1_letters < 2): 
+	if(level1_letters < 2 and global_position == Vector2(1628.0, -80)): 
 		text_box.start_dialog(lines1) 
+	elif level1_letters < 2: 
+		text_box.start_dialog(lines) 
 	else: 
 		text_box.start_dialog(lines2) 
 	interactable.is_interactable = false 

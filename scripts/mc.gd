@@ -12,6 +12,7 @@ const DASH_DURATION = 0.3
 var can_dash = true
 var is_dashing = false
 var spawn = Vector2(35.0, 63.0)
+var can_move = true
 # Current DASH mechanic allows the player to almost float for a few seconds if you press space right before dash, keep in maybe?
 
 func _ready():
@@ -21,62 +22,63 @@ func _ready():
 	print(global_position)
 
 func _physics_process(delta: float) -> void:
-	# Add gravity (only if not dashing)
-	if not is_on_floor() and not is_dashing:
-		velocity += get_gravity() * delta
+	if can_move:
+		# Add gravity (only if not dashing)
+		if not is_on_floor() and not is_dashing:
+			velocity += get_gravity() * delta
 
-	# Handle jump
-	if Input.is_action_pressed("jump") and is_on_floor(): #and not is_dashing:
-		velocity.y = JUMP_VELOCITY
-	
-	#for future crouching through platforms
-	#if Input.is_action_pressed("crouch"):
-		#set_collision_mask_value(5, false)
-	#else:
-		#set_collision_mask_value(5, true)
+		# Handle jump
+		if Input.is_action_pressed("jump") and is_on_floor(): #and not is_dashing:
+			velocity.y = JUMP_VELOCITY
+		
+		#for future crouching through platforms
+		#if Input.is_action_pressed("crouch"):
+			#set_collision_mask_value(5, false)
+		#else:
+			#set_collision_mask_value(5, true)
 
-	var direction := Input.get_axis("move_left", "move_right")
+		var direction := Input.get_axis("move_left", "move_right")
 
-	# Handle dash
-	if Input.is_action_just_pressed("sprint") and can_dash:
-		is_dashing = true
-		can_dash = false
-		dash_timer.start(DASH_DURATION)
-		speed = 530.0
+		# Handle dash
+		if Input.is_action_just_pressed("sprint") and can_dash:
+			is_dashing = true
+			can_dash = false
+			dash_timer.start(DASH_DURATION)
+			speed = 530.0
 
-		# Launch in facing direction
-		if animated_sprite.flip_h:
-			velocity.x = -DASH_VELOCITY/DASH_DURATION
-		else:
-			velocity.x = DASH_VELOCITY/DASH_DURATION
-
-		animated_sprite.play("dash")
-
-	# Normal movement
-	elif not is_dashing:
-		if direction:
-			velocity.x = direction * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-
-	# Flip the sprite
-	if not is_dashing:
-		if direction > 0:
-			animated_sprite.flip_h = false
-		elif direction < 0:
-			animated_sprite.flip_h = true
-
-	# Handle the animations
-	if not is_dashing:
-		if is_on_floor():
-			if direction == 0:
-				animated_sprite.play("idle")
+			# Launch in facing direction
+			if animated_sprite.flip_h:
+				velocity.x = -DASH_VELOCITY/DASH_DURATION
 			else:
-				animated_sprite.play("run")
-		else:
-			animated_sprite.play("jump")
+				velocity.x = DASH_VELOCITY/DASH_DURATION
 
-	move_and_slide()
+			animated_sprite.play("dash")
+
+		# Normal movement
+		elif not is_dashing:
+			if direction:
+				velocity.x = direction * speed
+			else:
+				velocity.x = move_toward(velocity.x, 0, speed)
+
+		# Flip the sprite
+		if not is_dashing:
+			if direction > 0:
+				animated_sprite.flip_h = false
+			elif direction < 0:
+				animated_sprite.flip_h = true
+
+		# Handle the animations
+		if not is_dashing:
+			if is_on_floor():
+				if direction == 0:
+					animated_sprite.play("idle")
+				else:
+					animated_sprite.play("run")
+			else:
+				animated_sprite.play("jump")
+		move_and_slide()
+	
 
 
 func _on_dash_timer_timeout() -> void:
@@ -90,7 +92,10 @@ func _on_can_dash_timer_timeout() -> void:
 
 
 func _on_enable_dash_body_entered(body: Node2D) -> void:
-	print(body)
 	if body is CharacterBody2D:
 		$ProgressBar.show()
-		print(body)
+
+func _process(delta):
+	if not can_move:
+		animated_sprite.play("idle")
+		return

@@ -3,10 +3,11 @@ extends Sprite2D
 var has_fallen: bool = false
 @onready var fall_timer: Timer = $FallTimer
 @onready var respawn_timer: Timer = $RespawnTimer
-var opacity_tween
+var opacity_tween 
 var pos_tween
 var start_position: Vector2
 var fall: bool = true
+var down: = Vector2(0, 1)
 
 func _ready():
 	start_position = global_position
