@@ -98,7 +98,7 @@
 [ext_resource type="Texture2D" uid="uid://ce2sbsie3juf6" path="res://assets/sprites/Tower_Level/Decor/shelves_export.png" id="74_tc8uq"]
 [ext_resource type="Script" uid="uid://dqxqakfk65h6t" path="res://scripts/letter_2.gd" id="76_fkywm"]
 [ext_resource type="Texture2D" uid="uid://t1gqdm7ci7pn" path="res://assets/sprites/Tower_Level/beanstalk_sheet.png" id="82_x8trd"]
-[ext_resource type="Script" uid="uid://yfsj3yl1na6a" path="res://scripts/beanstalk.gd" id="83_s33c4"]
+[ext_resource type="Script" path="res://scripts/beanstalk.gd" id="83_s33c4"]
 [ext_resource type="PackedScene" uid="uid://bg8pplfvrs3t2" path="res://scenes/falling_paintingplatform.tscn" id="85_iekjf"]
 [ext_resource type="Texture2D" uid="uid://dbbmt11exwo7j" path="res://assets/sprites/DownArrow.png" id="91_3hv4c"]
 [ext_resource type="PackedScene" uid="uid://clcihyyuy4ty4" path="res://scenes/letter_a.tscn" id="91_xjcjm"]
@@ -1712,7 +1712,7 @@ animation = &"crow"
 position = Vector2(8097, -720)
 
 [node name="Princess_End" parent="NPCs" instance=ExtResource("3_37s47")]
-position = Vector2(13325, -1456)
+position = Vector2(13377, -1456)
 
 [node name="Setting" type="Node" parent="."]
 
