@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2qw2v373cbca" path="res://scripts/interactions/textBox.gd" id="1_t77ms"]
 [ext_resource type="Texture2D" uid="uid://bfglwowcnd5d2" path="res://assets/fonts/Scroll.png" id="2_omjt5"]
-[ext_resource type="FontFile" uid="uid://cx6k8x82u5a41" path="res://assets/fonts/Faded_fable_cap_100%-Regular.ttf" id="3_l3hpm"]
+[ext_resource type="FontFile" uid="uid://df8rom1bj5xve" path="res://assets/fonts/Faded_fable_cap_11-Regular.ttf" id="4_37nfx"]
 [ext_resource type="Texture2D" uid="uid://cafyii040c3po" path="res://assets/sprites/E3.png" id="4_l3hpm"]
 
 [sub_resource type="Animation" id="Animation_qhhyi"]
@@ -10,7 +10,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/arrow:modulate")
+tracks/0/path = NodePath("arrow:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +27,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/arrow:modulate")
+tracks/0/path = NodePath("arrow:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,6 +55,12 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
+[node name="arrow" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("4_l3hpm")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -62,16 +68,10 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="arrow" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-texture = ExtResource("4_l3hpm")
-
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_l3hpm")
+theme_override_fonts/font = ExtResource("4_37nfx")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
