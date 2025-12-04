@@ -2245,7 +2245,7 @@ offset_bottom = 171.4
 scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("47_8qswn")
 theme_override_font_sizes/font_size = 300
-text = "Keep going!"
+text = "Checkpoint"
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("41_8ool0")]
 position = Vector2(1985, -96)

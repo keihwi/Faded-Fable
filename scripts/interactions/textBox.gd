@@ -3,7 +3,7 @@ extends Control
 @onready var label: Label = $MarginContainer/Label
 @onready var timer: Timer = $LetterDisplayTimer
 @onready var fade_arrow: AnimationPlayer = $fade_arrow
-@onready var arrow: TextureRect = $arrow
+@onready var arrow: TextureRect = $MarginContainer/arrow
 
 
 
