@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@onready var text_box: MarginContainer = $"../TextBox"
+@onready var text_box: Control = $"../TextBox"
 @onready var interactable: Area2D = $Interactable
 
 var level1_letters = 0

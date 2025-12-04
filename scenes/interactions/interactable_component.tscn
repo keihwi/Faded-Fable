@@ -8,6 +8,8 @@ radius = 24.0832
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ferj"]
 font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="interactableComponent" type="Node2D"]
 script = ExtResource("1_70pdn")

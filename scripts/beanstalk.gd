@@ -4,6 +4,9 @@ extends AnimatedSprite2D
 @onready var mc: CharacterBody2D = $"../../MC"
 @onready var ani_play: AnimationPlayer = $"../../MC/Camera2D/Fade/AnimationPlayer"
 
+func _ready() -> void:
+	hide()
+	frame = 0
 
 func _on_animation_finished() -> void:
 	timer.start()

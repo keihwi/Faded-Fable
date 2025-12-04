@@ -44,6 +44,8 @@ _data = {
 }
 
 [node name="TextBox" type="MarginContainer"]
+offset_right = 32.0
+offset_bottom = 36.04
 script = ExtResource("1_t77ms")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

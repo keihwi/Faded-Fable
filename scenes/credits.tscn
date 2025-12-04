@@ -5,22 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bmu5o3uwubehr" path="res://assets/zachary.jpg" id="1_2ckv8"]
 [ext_resource type="Texture2D" uid="uid://bn1i4i4iggenk" path="res://assets/title_screen/WithButtons.png" id="4_2fbfq"]
 
-[sub_resource type="Animation" id="Animation_0bpdh"]
-resource_name = "roll"
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-3, 706), Vector2(-3, -1419)]
-}
-
 [sub_resource type="Animation" id="Animation_0ctdu"]
 length = 0.001
 tracks/0/type = "value"
@@ -64,6 +48,22 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_0bpdh"]
+resource_name = "roll"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, 706), Vector2(-3, -2000)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ckv8"]
 _data = {
 &"RESET": SubResource("Animation_0ctdu"),
@@ -83,14 +83,14 @@ autoplay = "roll"
 
 [node name="MarginContainer" type="MarginContainer" parent="AnimationPlayer"]
 offset_left = -3.0
-offset_top = 706.0
+offset_top = -1378.67
 offset_right = 1148.0
-offset_bottom = 1540.0
+offset_bottom = -141.666
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Zachary" type="Sprite2D" parent="AnimationPlayer/MarginContainer"]
-position = Vector2(568, 1133)
+position = Vector2(568, 1507.67)
 texture = ExtResource("1_2ckv8")
 
 [node name="Label" type="Label" parent="AnimationPlayer/MarginContainer"]
@@ -112,17 +112,30 @@ text = "Faded Fable
 
 Creative Director - Keira Shaw
 
-Programmer -  Keira Shaw
 
-Technical Artist - Austin Blair
+Programmers -  Austin Blair, Keira Shaw
+
 
 Character Artist - Emmanuel Quainoo
 
+
 Player Character Artist - Austin Blair
 
-Background Artist - Matthew Snook
 
-Foreground Artist - Chris Zawolo
+Foreground Artist - Matthew Snook
+
+
+Background Artist - Chris Zawolo
+
+
+Type Designer - Matthew Snook
+
+
+
+
+
+
+
 
 
 

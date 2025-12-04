@@ -5,7 +5,7 @@ extends StaticBody2D
 var level2_letters = 0
 #var rooty = get_tree().get_root()  
 @onready var beanstalk: AnimatedSprite2D = get_node('../../../Setting/Beanstalk') 
-
+var growth = true
 # How dialogue is transmitted
 const lines: Array[String] = [
 	"You haven't collected all the letters, brave soul.",
@@ -49,6 +49,8 @@ func _on_text_box_dialog_finished() -> void:
 	if (not text_box.is_dialog_active): 
 		interactable.is_interactable = true 
 		text_box.is_dialog_finished_permanently = false
-	if level2_letters == 2: 
+	if level2_letters == 2 and growth: 
 		#print(beanstalk)
+		beanstalk.show()
 		beanstalk.play("grow")
+		growth = false
