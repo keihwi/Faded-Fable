@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c21up2ei0lmjl"]
+[gd_scene load_steps=11 format=3 uid="uid://c21up2ei0lmjl"]
 
 [ext_resource type="FontFile" uid="uid://ig1psrka71vj" path="res://assets/fonts/PixelOperator8.ttf" id="1_0bpdh"]
 [ext_resource type="Script" uid="uid://cqwh16jen2oc2" path="res://scripts/credits.gd" id="1_0ctdu"]
 [ext_resource type="Texture2D" uid="uid://bmu5o3uwubehr" path="res://assets/zachary.jpg" id="1_2ckv8"]
 [ext_resource type="Texture2D" uid="uid://bn1i4i4iggenk" path="res://assets/title_screen/WithButtons.png" id="4_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://rgiwm8m1ensg" path="res://assets/NutcrackerDev.jpg" id="4_mah5v"]
+[ext_resource type="Texture2D" uid="uid://y8fd36emxsde" path="res://assets/DragonBallDev.jpg" id="5_kyhnv"]
 
 [sub_resource type="Animation" id="Animation_0ctdu"]
 length = 0.001
@@ -50,7 +52,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0bpdh"]
 resource_name = "roll"
-length = 25.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -58,10 +60,10 @@ tracks/0/path = NodePath("..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 25),
+"times": PackedFloat32Array(0, 30),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-3, 706), Vector2(-3, -2000)]
+"values": [Vector2(-3, 706), Vector2(-3, -4700)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ckv8"]
@@ -83,14 +85,14 @@ autoplay = "roll"
 
 [node name="MarginContainer" type="MarginContainer" parent="AnimationPlayer"]
 offset_left = -3.0
-offset_top = -1378.67
+offset_top = -4700.0
 offset_right = 1148.0
-offset_bottom = -141.666
+offset_bottom = -611.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Zachary" type="Sprite2D" parent="AnimationPlayer/MarginContainer"]
-position = Vector2(568, 1507.67)
+position = Vector2(568, 4371)
 texture = ExtResource("1_2ckv8")
 
 [node name="Label" type="Label" parent="AnimationPlayer/MarginContainer"]
@@ -113,7 +115,18 @@ text = "Faded Fable
 Creative Director - Keira Shaw
 
 
+Creative Assistant - Austin Blair
+
+
+
 Programmers -  Austin Blair, Keira Shaw
+
+
+
+Asset Lead - Chris Zawolo
+
+
+Concept Artist - Emmanuel Quainoo
 
 
 Character Artist - Emmanuel Quainoo
@@ -128,7 +141,88 @@ Foreground Artist - Matthew Snook
 Background Artist - Chris Zawolo
 
 
+
 Type Designer - Matthew Snook
+
+
+Level Designer - Matthew Snook
+
+
+
+
+
+
+
+
+
+Dev Team
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks for playing!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -142,6 +236,16 @@ Type Designer - Matthew Snook
 Special Thanks
 "
 horizontal_alignment = 1
+
+[node name="NutcrackerDev" type="Sprite2D" parent="AnimationPlayer/MarginContainer"]
+position = Vector2(590, 1986.67)
+scale = Vector2(0.187004, 0.187004)
+texture = ExtResource("4_mah5v")
+
+[node name="DragonBallDev" type="Sprite2D" parent="AnimationPlayer/MarginContainer"]
+position = Vector2(592, 3347)
+scale = Vector2(0.187, 0.187)
+texture = ExtResource("5_kyhnv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
