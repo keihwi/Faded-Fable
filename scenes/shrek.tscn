@@ -59,6 +59,7 @@ radius = 27.0
 [node name="Shrek" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bvwgi")
 animation = &"idle"
@@ -71,9 +72,9 @@ shape = SubResource("RectangleShape2D_ay3hf")
 
 [node name="TextBox" parent="." instance=ExtResource("4_52m2g")]
 offset_left = -113.0
-offset_top = -137.0
+offset_top = -126.0
 offset_right = -81.0
-offset_bottom = -98.0
+offset_bottom = -87.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("1_ex0w3")

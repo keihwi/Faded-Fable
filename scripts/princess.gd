@@ -16,17 +16,19 @@ const lines1: Array[String] = [
 	"It's lovely to meet you.",
 	"I was just singing to the crows...",
 	"I don’t get many visitors these days.",
-	"Just a view of devastation out one window...",
-	"...and isolation in my bedroom...",
+	"Just a view of devastation...",
+	"...and isolation...",
 	"I need you to fix our b_anst_lk.",
 	"It holds our pages together...",
-	"It's safe to jump down the cliff behind me.",
+	"It brightens our world, heals it.",
+	"Please help us, hero.",
 	"I wish you luck on your journey.",
 ]
 
 const lines2: Array[String] = [
 	"Thank you!",
-	"You've saved our story"
+	"You've saved our story",
+	"We're forever in your debt."
 ]
 
 func _ready() -> void:
