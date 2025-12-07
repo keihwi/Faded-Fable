@@ -27,8 +27,12 @@ const lines1: Array[String] = [
 
 const lines2: Array[String] = [
 	"Thank you!",
+<<<<<<< Updated upstream
 	"You've saved our story",
 	"We're forever in your debt."
+=======
+	"You've saved our story."
+>>>>>>> Stashed changes
 ]
 
 func _ready() -> void:
