@@ -85,14 +85,14 @@ autoplay = "roll"
 
 [node name="MarginContainer" type="MarginContainer" parent="AnimationPlayer"]
 offset_left = -3.0
-offset_top = -4700.0
+offset_top = 706.0
 offset_right = 1148.0
-offset_bottom = -611.0
+offset_bottom = 4888.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Zachary" type="Sprite2D" parent="AnimationPlayer/MarginContainer"]
-position = Vector2(568, 4371)
+position = Vector2(568, 4432)
 texture = ExtResource("1_2ckv8")
 
 [node name="Label" type="Label" parent="AnimationPlayer/MarginContainer"]
@@ -142,7 +142,10 @@ Background Artist - Chris Zawolo
 
 
 
-Type Designer - Matthew Snook
+Font Designer - Matthew Snook
+
+
+Writers - Keira Shaw, Matthew Snook
 
 
 Level Designer - Matthew Snook
@@ -238,7 +241,7 @@ Special Thanks
 horizontal_alignment = 1
 
 [node name="NutcrackerDev" type="Sprite2D" parent="AnimationPlayer/MarginContainer"]
-position = Vector2(590, 1986.67)
+position = Vector2(590, 2065)
 scale = Vector2(0.187004, 0.187004)
 texture = ExtResource("4_mah5v")
 
